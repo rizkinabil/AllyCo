@@ -4,20 +4,19 @@ import Image from 'next/image';
 export default function Framework() {
   const methodology = [
     {
-      phase: 'Discovery',
-      description: 'Deep understanding of your business context, challenges, and transformation objectives.',
+      phase: 'Validate & Prioritize',
+      description:
+        'Listen to your challenges, validate problems with facts, and prioritize use-cases that deliver the highest impact.',
     },
     {
-      phase: 'Planning',
-      description: 'Detailed roadmap development with clear milestones and success metrics.',
+      phase: 'Prove Value First',
+      description:
+        'Demonstrate measurable impact through proof of value before building a justified business case for scaled investment.',
     },
     {
-      phase: 'Execution',
-      description: 'Incremental, iterative delivery with continuous feedback and measurable progress.',
-    },
-    {
-      phase: 'Sustain',
-      description: 'Ensuring successful adoption, knowledge transfer, and continuous improvement.',
+      phase: 'Scale & Optimize',
+      description:
+        'Implement solutions at scale and establish continuous improvement cycles for long-term value creation.',
     },
   ];
 
@@ -40,7 +39,6 @@ export default function Framework() {
         </div>
       </section>
 
-      {/* Framework Overview */}
       {/* Methodology Section - Timeline style */}
       <section className="relative py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -52,7 +50,7 @@ export default function Framework() {
             <h2 className="text-5xl lg:text-6xl font-bold text-[#000000] max-w-3xl">How We Deliver Value</h2>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-12">
+          <div className="grid md:grid-cols-3 gap-12">
             {methodology.map((item, index) => (
               <div key={index} className="group space-y-6">
                 {/* Number circle */}
