@@ -52,7 +52,7 @@ export default function Contact() {
           <div className="text-center animate-fade-in-up">
             <h1 className="text-6xl font-bold mb-6">Get in Touch</h1>
             <p className="text-xl font-light">
-              We'd love to hear from you. Let's discuss how AllyCo can support your transformation journey.
+              We&apos;d love to hear from you. Let&apos;s discuss how AllyCo can support your transformation journey.
             </p>
           </div>
         </div>
@@ -61,14 +61,14 @@ export default function Contact() {
       {/* Contact Section */}
       <section className="py-20 bg-[#f5f5f5]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-1 gap-12">
             {/* Contact Information */}
-            <div>
+            {/* <div>
               <h2 className="text-4xl font-bold text-[#000000] mb-8">Contact Information</h2>
 
               <div className="space-y-8">
                 <div className="flex gap-4">
-                  <div className="text-3xl text-[#0002ba] flex-shrink-0">📍</div>
+                  <div className="text-3xl text-[#0002ba] shrink-0">📍</div>
                   <div>
                     <h3 className="text-xl font-bold text-[#000000] mb-2">Address</h3>
                     <p className="text-[#31312d] font-light">
@@ -82,7 +82,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="text-3xl text-[#0002ba] flex-shrink-0">📞</div>
+                  <div className="text-3xl text-[#0002ba] shrink-0">📞</div>
                   <div>
                     <h3 className="text-xl font-bold text-[#000000] mb-2">Phone</h3>
                     <p className="text-[#31312d] font-light">+1 (555) 123-4567</p>
@@ -90,7 +90,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="text-3xl text-[#0002ba] flex-shrink-0">✉️</div>
+                  <div className="text-3xl text-[#0002ba] shrink-0">✉️</div>
                   <div>
                     <h3 className="text-xl font-bold text-[#000000] mb-2">Email</h3>
                     <p className="text-[#31312d] font-light">
@@ -102,7 +102,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="text-3xl text-[#0002ba] flex-shrink-0">🕐</div>
+                  <div className="text-3xl text-[#0002ba] shrink-0">🕐</div>
                   <div>
                     <h3 className="text-xl font-bold text-[#000000] mb-2">Business Hours</h3>
                     <p className="text-[#31312d] font-light">
@@ -112,10 +112,10 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              {/* Social Links */}
-              <div className="mt-12 pt-8 border-t border-[#b5b5b5]">
+            {/* Social Links */}
+            {/* <div className="mt-12 pt-8 border-t border-[#b5b5b5]">
                 <h3 className="text-xl font-bold text-[#000000] mb-4">Follow Us</h3>
                 <div className="flex gap-4">
                   <a href="#" className="text-[#0002ba] hover:text-[#31312d] font-semibold transition-colors">
@@ -128,8 +128,8 @@ export default function Contact() {
                     Facebook
                   </a>
                 </div>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
 
             {/* Contact Form */}
             <div>
@@ -138,12 +138,12 @@ export default function Contact() {
               {submitted ? (
                 <div className="bg-green-50 border border-green-300 text-green-700 px-8 py-6 rounded-lg text-center">
                   <p className="text-xl font-semibold mb-2">Thank you for reaching out!</p>
-                  <p>We'll get back to you as soon as possible.</p>
+                  <p>We&apos;ll get back to you as soon as possible.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#31312d] font-medium mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-[#31312d] mb-2">
                       Full Name
                     </label>
                     <input
@@ -153,13 +153,13 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="John Doe"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#31312d] font-medium mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-[#31312d] mb-2">
                       Email
                     </label>
                     <input
@@ -169,13 +169,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-[#31312d] font-medium mb-2">
+                    <label htmlFor="company" className="block text-sm font-medium text-[#31312d] mb-2">
                       Company Name
                     </label>
                     <input
@@ -184,13 +184,13 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="Your Company"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-[#31312d] font-medium mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-[#31312d] mb-2">
                       Phone Number
                     </label>
                     <input
@@ -199,13 +199,13 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none"
+                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-[#31312d] font-medium mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium text-[#31312d] mb-2">
                       Service
                     </label>
                     <select
@@ -214,7 +214,7 @@ export default function Contact() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-[#31312d]"
+                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                     >
                       <option value="">Select a subject</option>
                       <option value="digital-strategy">Digital Strategy Consultation</option>
@@ -225,7 +225,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#31312d] font-medium mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-[#31312d mb-2">
                       Message
                     </label>
                     <textarea
@@ -233,9 +233,9 @@ export default function Contact() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      rows="5"
+                      rows={5}
                       required
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-[#31312d]"
+                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="Tell us about your transformation goals..."
                     />
                   </div>

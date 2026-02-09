@@ -2,42 +2,82 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isWhiteLabelNav = pathname === '/' || pathname === '/contact' || pathname === '/framework';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
+    { name: 'Capabilities', href: '/services' },
     { name: 'Framework', href: '/framework' },
     { name: 'Contact', href: '/contact' },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-white backdrop-blur-sm border-b border-[#0002ba]/5 shadow-sm'
+          : 'bg-transparent border-b border-transparent'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex justify-between items-center ">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Image src="/logo.png" alt="AllyCo Logo" width={60} height={60} priority className="object-contain" />
+          <div className="shrink-0">
+            <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity duration-300">
+              <Image
+                src={scrolled ? '/logo-nobg.png' : '/invert-logo.png'}
+                alt="AllyCo"
+                width={60}
+                height={60}
+                priority
+                className="object-contain"
+              />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-1">
-              {navItems.map((item) => (
+            <div className="flex items-center space-x-1">
+              {navItems.map((item, index) => (
                 <Link
-                  key={item.name}
+                  key={`nav-item-${item.name}-${index}`}
                   href={item.href}
-                  className="px-4 py-2 rounded-md text-sm font-medium text-[#31312d] hover:text-[#0002ba] hover:bg-gray-100 transition-all duration-300"
+                  className={`relative px-5 py-2 text-sm font-medium transition-colors duration-300 group ${
+                    isWhiteLabelNav && !scrolled
+                      ? 'text-white hover:text-white/80'
+                      : 'text-[#31312d] hover:text-[#0002ba]'
+                  }`}
                 >
                   {item.name}
+                  <span
+                    className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-px ${isWhiteLabelNav ? 'bg-white' : 'bg-[#0002ba]'} transition-all duration-300 group-hover:w-4/5`}
+                  ></span>
                 </Link>
               ))}
+
+              {/* CTA Button */}
+              <Link
+                href="/contact"
+                className="ml-4 px-6 py-2.5 bg-[#0002ba] text-white text-sm font-medium hover:bg-[#000000] transition-all duration-300"
+              >
+                Get Started
+              </Link>
             </div>
           </div>
 
@@ -45,10 +85,21 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-[#0002ba] hover:bg-gray-100 focus:outline-none transition-colors"
+              className="inline-flex items-center justify-center p-2 text-[#31312d] hover:text-[#0002ba] focus:outline-none transition-colors duration-300"
+              aria-label="Toggle menu"
             >
-              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className={`h-6 w-6 transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`}
+                stroke="currentColor"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+              >
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                )}
               </svg>
             </button>
           </div>
@@ -57,18 +108,25 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
+        <div className="md:hidden border-t border-[#0002ba]/5 bg-white">
+          <div className="px-6 py-6 space-y-2">
+            {navItems.map((item, index) => (
               <Link
-                key={item.name}
+                key={`nav-item-${item.name}-${index}`}
                 href={item.href}
-                className="block px-3 py-2 rounded-md text-base font-medium text-[#31312d] hover:text-[#0002ba] hover:bg-gray-100 transition-all duration-300"
+                className="block px-4 py-3 text-base font-medium text-[#31312d] hover:text-[#0002ba] hover:bg-[#f5f5f5]/50 transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className="block px-4 py-3 mt-4 bg-[#0002ba] text-white text-base font-medium text-center hover:bg-[#000000] transition-all duration-300"
+              onClick={() => setIsOpen(false)}
+            >
+              Get Started
+            </Link>
           </div>
         </div>
       )}

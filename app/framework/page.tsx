@@ -2,6 +2,25 @@ import heroAbout from '@/src/images/hero-image.jpg';
 import Image from 'next/image';
 
 export default function Framework() {
+  const methodology = [
+    {
+      phase: 'Discovery',
+      description: 'Deep understanding of your business context, challenges, and transformation objectives.',
+    },
+    {
+      phase: 'Planning',
+      description: 'Detailed roadmap development with clear milestones and success metrics.',
+    },
+    {
+      phase: 'Execution',
+      description: 'Incremental, iterative delivery with continuous feedback and measurable progress.',
+    },
+    {
+      phase: 'Sustain',
+      description: 'Ensuring successful adoption, knowledge transfer, and continuous improvement.',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Background Image */}
@@ -22,33 +41,39 @@ export default function Framework() {
       </section>
 
       {/* Framework Overview */}
-      <section className="py-20 bg-[#f5f5f5]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-12 rounded-xl shadow-lg mb-12 animate-scale-in">
-            <h2 className="text-4xl font-bold text-[#000000] mb-6">The AllyCo Approach</h2>
-            <p className="text-xl text-[#31312d] mb-8 font-light">
-              Our comprehensive framework combines strategic planning, incremental delivery, and continuous improvement
-              to ensure sustainable digital transformation success.
-            </p>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center animate-fade-in-up">
-                <div className="text-5xl mb-4">🔍</div>
-                <h3 className="text-xl font-bold text-[#0002ba] mb-2">Assessment</h3>
-                <p className="text-[#31312d] font-light">
-                  Deep analysis of current state, challenges, and opportunities.
-                </p>
-              </div>
-              <div className="text-center animate-fade-in-up delay-100">
-                <div className="text-5xl mb-4">📋</div>
-                <h3 className="text-xl font-bold text-[#0002ba] mb-2">Roadmap</h3>
-                <p className="text-[#31312d] font-light">Strategic roadmap with clear milestones and deliverables.</p>
-              </div>
-              <div className="text-center animate-fade-in-up delay-200">
-                <div className="text-5xl mb-4">🚀</div>
-                <h3 className="text-xl font-bold text-[#0002ba] mb-2">Execution</h3>
-                <p className="text-[#31312d] font-light">Incremental delivery with continuous value realization.</p>
-              </div>
+      {/* Methodology Section - Timeline style */}
+      <section className="relative py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="mb-20">
+            <div className="flex items-center gap-8 mb-6">
+              <div className="w-12 h-px bg-[#0002ba]"></div>
+              <span className="text-[#0002ba] font-medium tracking-widest text-sm uppercase">Methodology</span>
             </div>
+            <h2 className="text-5xl lg:text-6xl font-bold text-[#000000] max-w-3xl">How We Deliver Value</h2>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-12">
+            {methodology.map((item, index) => (
+              <div key={index} className="group space-y-6">
+                {/* Number circle */}
+                <div className="relative">
+                  <div className="w-20 h-20 border-2 border-[#0002ba]/20 flex items-center justify-center bg-white group-hover:bg-[#0002ba] group-hover:border-[#0002ba] transition-all duration-500">
+                    <span className="text-2xl font-bold text-[#0002ba] group-hover:text-white transition-colors">
+                      {index + 1}
+                    </span>
+                  </div>
+                  {/* Connection line */}
+                  {index < methodology.length - 1 && (
+                    <div className="hidden md:block absolute top-10 left-20 w-[calc(100%+3rem)] h-px bg-gradient-to-r from-[#0002ba]/20 to-[#0002ba]/5"></div>
+                  )}
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-xl font-bold text-[#000000]">{item.phase}</h3>
+                  <p className="text-[#31312d]/70 leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -102,8 +127,8 @@ export default function Framework() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-12">Incremental Delivery Model</h2>
           <p className="text-lg text-[#31312d] mb-12 font-light">
-            Instead of attempting a "big bang" transformation, we break complex initiatives into manageable increments
-            that deliver value progressively.
+            Instead of attempting a &quot;big bang&quot; transformation, we break complex initiatives into manageable
+            increments that deliver value progressively.
           </p>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="animate-slide-in-left">
@@ -131,7 +156,7 @@ export default function Framework() {
                 </li>
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-[#0002ba] to-[#31312d] rounded-xl p-8 flex items-center justify-center shadow-lg animate-scale-in">
+            <div className="bg-linear-to-br from-[#0002ba] to-[#31312d] rounded-xl p-8 flex items-center justify-center shadow-lg animate-scale-in">
               <div className="text-center">
                 <div className="text-6xl mb-4">📊</div>
                 <p className="text-lg text-white font-light">
@@ -150,7 +175,7 @@ export default function Framework() {
           <div className="grid md:grid-cols-4 gap-6">
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in-up">
               <div className="text-4xl font-bold text-[#0002ba] mb-4">Phase 1</div>
-              <h3 className="text-xl font-bold text-[#000000] mb-3">Initiation</h3>
+              <h3 className="text-xl font-bold text-[#000000] mb-3">Digital Foundation</h3>
               <ul className="space-y-2 text-[#31312d] text-sm font-light">
                 <li>• Stakeholder alignment</li>
                 <li>• Vision & roadmap</li>
@@ -160,32 +185,32 @@ export default function Framework() {
             </div>
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in-up delay-100">
               <div className="text-4xl font-bold text-[#0002ba] mb-4">Phase 2</div>
-              <h3 className="text-xl font-bold text-[#000000] mb-3">Planning</h3>
+              <h3 className="text-xl font-bold text-[#000000] mb-3">System Integration</h3>
               <ul className="space-y-2 text-[#31312d] text-sm font-light">
-                <li>• Detailed requirement analysis</li>
-                <li>• Solution design</li>
-                <li>• Resource allocation</li>
-                <li>• Risk management</li>
+                <li>• Platform selection</li>
+                <li>• Data integration</li>
+                <li>• System configuration</li>
+                <li>• Process automation</li>
               </ul>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in-up delay-200">
               <div className="text-4xl font-bold text-[#0002ba] mb-4">Phase 3</div>
-              <h3 className="text-xl font-bold text-[#000000] mb-3">Delivery</h3>
+              <h3 className="text-xl font-bold text-[#000000] mb-3">Operational Optimization</h3>
               <ul className="space-y-2 text-[#31312d] text-sm font-light">
-                <li>• Iterative implementation</li>
-                <li>• Testing & validation</li>
-                <li>• Stakeholder reviews</li>
-                <li>• Value realization</li>
+                <li>• Workflow optimization</li>
+                <li>• Performance tracking</li>
+                <li>• Training & adoption</li>
+                <li>• Continuous improvement</li>
               </ul>
             </div>
             <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in-up delay-300">
               <div className="text-4xl font-bold text-[#0002ba] mb-4">Phase 4</div>
-              <h3 className="text-xl font-bold text-[#000000] mb-3">Sustain</h3>
+              <h3 className="text-xl font-bold text-[#000000] mb-3">Smart Manufacturing & AI</h3>
               <ul className="space-y-2 text-[#31312d] text-sm font-light">
-                <li>• Knowledge transfer</li>
-                <li>• Performance monitoring</li>
-                <li>• Continuous optimization</li>
-                <li>• Future enhancements</li>
+                <li>• Predictive analytics</li>
+                <li>• AI-powered insights</li>
+                <li>• IoT integration</li>
+                <li>• Advanced automation</li>
               </ul>
             </div>
           </div>
@@ -197,11 +222,11 @@ export default function Framework() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform?</h2>
           <p className="text-xl mb-8 font-light">
-            Let's discuss how the AllyCo Framework can support your transformation goals.
+            Let&apos;s discuss how the AllyCo Framework can support your transformation goals.
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-[#0002ba] px-10 py-4 rounded-lg font-semibold hover:bg-[#f5f5f5] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:translate-y-[-2px]"
+            className="inline-block bg-white text-[#0002ba] px-10 py-4 rounded-lg font-semibold hover:bg-[#f5f5f5] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             Contact Us
           </a>
