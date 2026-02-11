@@ -46,12 +46,12 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Background Image */}
-      <section className="relative h-80 bg-[#0002ba] text-white overflow-hidden">
+      <section className="relative h-64 sm:h-72 md:h-80 bg-[#0002ba] text-white overflow-hidden">
         <Image src={heroAbout} alt="Get in Touch" fill className="object-cover opacity-40" priority />
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center z-10">
-          <div className="text-center animate-fade-in-up">
-            <h1 className="text-6xl font-bold mb-6">Get in Touch</h1>
-            <p className="text-xl font-light">
+          <div className="text-center animate-fade-in-up px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">Get in Touch</h1>
+            <p className="text-base sm:text-lg md:text-xl font-light">
               We&apos;d love to hear from you. Let&apos;s discuss how AllyCo can support your transformation journey.
             </p>
           </div>
@@ -59,9 +59,9 @@ export default function Contact() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-[#f5f5f5]">
+      <section className="py-16 sm:py-20 bg-[#f5f5f5]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-1 gap-12">
+          <div className="grid md:grid-cols-1 gap-8 sm:gap-12">
             {/* Contact Information */}
             {/* <div>
               <h2 className="text-4xl font-bold text-[#000000] mb-8">Contact Information</h2>
@@ -133,17 +133,19 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div>
-              <h2 className="text-4xl font-bold text-[#000000] mb-8">Send us a Message</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#000000] mb-6 sm:mb-8">
+                Send us a Message
+              </h2>
 
               {submitted ? (
-                <div className="bg-green-50 border border-green-300 text-green-700 px-8 py-6 rounded-lg text-center">
-                  <p className="text-xl font-semibold mb-2">Thank you for reaching out!</p>
-                  <p>We&apos;ll get back to you as soon as possible.</p>
+                <div className="bg-green-50 border border-green-300 text-green-700 px-6 sm:px-8 py-5 sm:py-6 rounded-lg text-center">
+                  <p className="text-lg sm:text-xl font-semibold mb-2">Thank you for reaching out!</p>
+                  <p className="text-sm sm:text-base">We&apos;ll get back to you as soon as possible.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#31312d] mb-2">
+                    <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-[#31312d] mb-2">
                       Full Name
                     </label>
                     <input
@@ -153,13 +155,13 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="John Doe"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#31312d] mb-2">
+                    <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-[#31312d] mb-2">
                       Email
                     </label>
                     <input
@@ -169,7 +171,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -184,7 +186,7 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="Your Company"
                     />
                   </div>
@@ -199,33 +201,13 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-[#31312d] mb-2">
-                      Service
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="digital-strategy">Digital Strategy Consultation</option>
-                      <option value="transformation">Transformation Services</option>
-                      <option value="implementation">Technology Implementation</option>
-                      <option value="general">General Inquiry</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-[#31312d mb-2">
+                    <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-[#31312d] mb-2">
                       Message
                     </label>
                     <textarea
@@ -235,14 +217,14 @@ export default function Contact() {
                       onChange={handleChange}
                       rows={5}
                       required
-                      className="w-full px-4 py-2 border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base border border-[#b5b5b5] rounded-lg focus:ring-2 focus:ring-[#0002ba] focus:border-transparent outline-none text-black"
                       placeholder="Tell us about your transformation goals..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors"
+                    className="w-full bg-blue-900 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg font-semibold hover:bg-blue-800 transition-colors text-sm sm:text-base"
                   >
                     Send Message
                   </button>
@@ -254,34 +236,44 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-16 sm:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Frequently Asked Questions</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="border border-gray-300 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">How long does a typical transformation take?</h3>
-              <p className="text-gray-700">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+            <div className="border border-gray-300 rounded-lg p-5 sm:p-6">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+                How long does a typical transformation take?
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700">
                 The timeline varies based on complexity and scope, but our incremental delivery approach typically shows
                 results within 3-6 months with continued value delivery thereafter.
               </p>
             </div>
-            <div className="border border-gray-300 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">What industries do you serve?</h3>
-              <p className="text-gray-700">
+            <div className="border border-gray-300 rounded-lg p-5 sm:p-6">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+                What industries do you serve?
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700">
                 We have experience across multiple industries including finance, healthcare, manufacturing, retail, and
                 technology sectors.
               </p>
             </div>
-            <div className="border border-gray-300 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Do you provide post-implementation support?</h3>
-              <p className="text-gray-700">
+            <div className="border border-gray-300 rounded-lg p-5 sm:p-6">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+                Do you provide post-implementation support?
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700">
                 Yes, we offer comprehensive post-implementation support including training, optimization, and ongoing
                 advisory services.
               </p>
             </div>
-            <div className="border border-gray-300 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">How do you measure success?</h3>
-              <p className="text-gray-700">
+            <div className="border border-gray-300 rounded-lg p-5 sm:p-6">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+                How do you measure success?
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700">
                 We establish clear KPIs at the beginning and track them throughout the transformation to ensure
                 alignment with your business objectives.
               </p>
