@@ -46,6 +46,7 @@ export default function Navigation() {
                 width={50}
                 height={50}
                 priority
+                quality={95}
                 className="object-contain sm:w-[60px] sm:h-[60px]"
               />
             </Link>

@@ -1,5 +1,5 @@
 import squareVisionImage from '@/src/images/square-vision.jpg';
-import visionMission from '@/src/images/vision-mission.jpg';
+import bussinessOutlook from '@/src/images/bussiness-outlook.jpg';
 import Image from 'next/image';
 
 export default function About() {
@@ -24,7 +24,8 @@ export default function About() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#000000] leading-tight">
-                Building the future through <span className="text-[#0002ba] italic font-light">intelligent</span> transformation
+                Building the future through <span className="text-[#0002ba] italic font-light">intelligent</span>{' '}
+                transformation
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl text-[#31312d]/60 leading-relaxed font-light max-w-2xl">
@@ -51,7 +52,9 @@ export default function About() {
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-center gap-4 sm:gap-6">
                   <div className="w-6 sm:w-8 h-px bg-gradient-to-r from-[#0002ba] to-transparent"></div>
-                  <span className="text-[#0002ba] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">Our Mission</span>
+                  <span className="text-[#0002ba] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">
+                    Our Mission
+                  </span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#000000] leading-tight">
                   Trusted Partnership in <span className="text-[#0002ba]">Digital Evolution</span>
@@ -78,7 +81,15 @@ export default function About() {
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[400px] xl:h-[500px] scroll-reveal-2">
               <div className="professional-card magnetic-card bg-white border border-[#f5f5f5] hover:border-[#0002ba]/20 rounded-2xl shadow-elevated-hover overflow-hidden">
                 <div className="relative h-full w-full">
-                  <Image src={squareVisionImage} alt="Our Mission" fill className="object-cover parallax-image" priority />
+                  <Image
+                    src={squareVisionImage}
+                    alt="Our Mission"
+                    fill
+                    className="object-cover parallax-image"
+                    priority
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  />
                   {/* Enhanced gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0002ba]/10 via-transparent to-white/70"></div>
                 </div>
@@ -102,9 +113,13 @@ export default function About() {
           <div className="mb-12 sm:mb-16 lg:mb-20">
             <div className="flex items-center gap-4 sm:gap-8 mb-6">
               <div className="w-8 sm:w-12 h-px bg-[#0002ba]"></div>
-              <span className="text-[#0002ba] font-medium tracking-widest text-xs sm:text-sm uppercase">Our core belief</span>
+              <span className="text-[#0002ba] font-medium tracking-widest text-xs sm:text-sm uppercase">
+                Our core belief
+              </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#000000] max-w-3xl">Principles That Guide Our Work</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#000000] max-w-3xl">
+              Principles That Guide Our Work
+            </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
@@ -194,7 +209,14 @@ export default function About() {
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] order-2 lg:order-1 scroll-reveal">
               <div className="professional-card magnetic-card bg-white border border-[#f5f5f5] hover:border-[#0002ba]/20 rounded-2xl shadow-elevated-hover overflow-hidden h-full">
                 <div className="relative h-full w-full">
-                  <Image src={visionMission} alt="Why AllyCo" fill className="object-cover parallax-image" />
+                  <Image
+                    src={bussinessOutlook}
+                    alt="Why AllyCo"
+                    fill
+                    className="object-cover parallax-image"
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  />
                   {/* Enhanced gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#0002ba]/20 via-transparent to-white/60"></div>
                 </div>
@@ -214,7 +236,9 @@ export default function About() {
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-center gap-4 sm:gap-6">
                   <div className="w-6 sm:w-8 h-px bg-gradient-to-r from-[#0002ba] to-transparent"></div>
-                  <span className="text-[#0002ba] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">Why AllyCo</span>
+                  <span className="text-[#0002ba] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">
+                    Why AllyCo
+                  </span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#000000] leading-tight">
                   What Sets Us <span className="text-[#0002ba]">Apart</span>
@@ -252,7 +276,9 @@ export default function About() {
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#000000]">{item.title}</h3>
-                      <p className="text-sm sm:text-base text-[#31312d]/70 leading-relaxed font-light">{item.description}</p>
+                      <p className="text-sm sm:text-base text-[#31312d]/70 leading-relaxed font-light">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -278,7 +304,9 @@ export default function About() {
           <div className="max-w-4xl scroll-reveal">
             <div className="space-y-6 sm:space-y-8">
               <div className="inline-block">
-                <span className="text-white/70 font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">Next Steps</span>
+                <span className="text-white/70 font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">
+                  Next Steps
+                </span>
                 <div className="h-px w-24 bg-gradient-to-r from-white/40 to-transparent mt-3"></div>
               </div>
 

@@ -41,7 +41,15 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 overflow-hidden">
-            <Image src={visionMission} alt="AllyCo Banner" fill className="object-cover parallax-image" priority />
+            <Image
+              src={visionMission}
+              alt="AllyCo Banner"
+              fill
+              className="object-cover parallax-image"
+              priority
+              quality={90}
+              sizes="100vw"
+            />
           </div>
           {/* Enhanced gradient overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/45 to-black/30"></div>
@@ -113,6 +121,8 @@ export default function Home() {
                     fill
                     className="object-cover grayscale-30 parallax-image"
                     priority
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                   />
                   {/* Enhanced gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0002ba]/15 via-transparent to-white/90"></div>

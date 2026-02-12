@@ -1,5 +1,4 @@
-import missionImage from '@/src/images/vision-mission.jpg';
-import heroImage from '@/src/images/hero-image.jpg';
+import capabilitiesImage from '@/src/images/capabilities.jpg';
 import squareVision from '@/src/images/square-vision.jpg';
 import Image from 'next/image';
 
@@ -58,7 +57,15 @@ export default function Services() {
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[400px] xl:h-[500px] scroll-reveal-2">
               <div className="professional-card magnetic-card bg-white border border-[#f5f5f5] hover:border-[#0002ba]/20 rounded-2xl shadow-elevated-hover overflow-hidden h-full">
                 <div className="relative h-full w-full">
-                  <Image src={missionImage} alt="Our Services" fill className="object-cover parallax-image" priority />
+                  <Image
+                    src={capabilitiesImage}
+                    alt="Our Services"
+                    fill
+                    className="object-cover parallax-image"
+                    priority
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  />
                   {/* Enhanced gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#0002ba]/10 via-transparent to-white/70"></div>
                 </div>
@@ -88,7 +95,9 @@ export default function Services() {
           <div className="mb-12 sm:mb-16 lg:mb-20 scroll-reveal">
             <div className="flex items-center gap-4 sm:gap-8 mb-6">
               <div className="w-8 sm:w-12 h-px bg-gradient-to-r from-[#0002ba] to-transparent"></div>
-              <span className="text-[#0002ba] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">Our Services</span>
+              <span className="text-[#0002ba] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">
+                Our Services
+              </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#000000] max-w-3xl leading-tight">
               Capabilities That Drive <span className="text-[#0002ba]">Transformation</span>
@@ -102,14 +111,23 @@ export default function Services() {
                 className={`group professional-card magnetic-card bg-white border border-[#f5f5f5] hover:border-[#0002ba]/20 p-6 sm:p-8 lg:p-10 space-y-4 sm:space-y-6 rounded-2xl shadow-elevated-hover scroll-reveal-${index + 1}`}
               >
                 <div className="flex items-start justify-between">
-                  <span className="text-6xl sm:text-7xl lg:text-8xl font-bold gradient-number" data-number={service.number}>{service.number}</span>
+                  <span
+                    className="text-6xl sm:text-7xl lg:text-8xl font-bold gradient-number"
+                    data-number={service.number}
+                  >
+                    {service.number}
+                  </span>
                   <div className="w-6 h-6 sm:w-8 sm:h-8 border border-[#0002ba]/10 group-hover:border-[#0002ba]/30 group-hover:bg-[#0002ba]/5 transition-all duration-500 rounded"></div>
                 </div>
 
                 <div className="space-y-3 sm:space-y-4">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#000000] leading-tight">{service.title}</h3>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#000000] leading-tight">
+                    {service.title}
+                  </h3>
                   <div className="w-12 h-1 bg-gradient-to-r from-[#0002ba] to-transparent rounded-full"></div>
-                  <p className="text-sm sm:text-base text-[#31312d]/70 leading-relaxed font-light">{service.description}</p>
+                  <p className="text-sm sm:text-base text-[#31312d]/70 leading-relaxed font-light">
+                    {service.description}
+                  </p>
                 </div>
 
                 <div className="h-px w-12 bg-[#0002ba]/0 group-hover:w-full group-hover:bg-[#0002ba]/20 transition-all duration-500"></div>
@@ -127,7 +145,14 @@ export default function Services() {
             <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] scroll-reveal">
               <div className="professional-card magnetic-card bg-white border border-[#f5f5f5] hover:border-[#0002ba]/20 rounded-2xl shadow-elevated-hover overflow-hidden h-full">
                 <div className="relative h-full w-full">
-                  <Image src={squareVision} alt="Business Impact" fill className="object-cover parallax-image" />
+                  <Image
+                    src={squareVision}
+                    alt="Business Impact"
+                    fill
+                    className="object-cover parallax-image"
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  />
                   {/* Enhanced gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-tl from-[#0002ba]/20 via-transparent to-white/60"></div>
                 </div>
@@ -147,7 +172,9 @@ export default function Services() {
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex items-center gap-4 sm:gap-6">
                   <div className="w-6 sm:w-8 h-px bg-gradient-to-r from-[#0002ba] to-transparent"></div>
-                  <span className="text-[#0002ba] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">Benefits</span>
+                  <span className="text-[#0002ba] font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">
+                    Benefits
+                  </span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#000000] leading-tight">
                   Measurable <span className="text-[#0002ba]">Business Impact</span>
@@ -188,7 +215,9 @@ export default function Services() {
                     </div>
                     <div className="space-y-2">
                       <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#000000]">{item.title}</h3>
-                      <p className="text-sm sm:text-base text-[#31312d]/70 leading-relaxed font-light">{item.description}</p>
+                      <p className="text-sm sm:text-base text-[#31312d]/70 leading-relaxed font-light">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -214,7 +243,9 @@ export default function Services() {
           <div className="max-w-4xl scroll-reveal">
             <div className="space-y-6 sm:space-y-8">
               <div className="inline-block">
-                <span className="text-white/70 font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">Get Started</span>
+                <span className="text-white/70 font-semibold tracking-[0.2em] text-xs sm:text-sm uppercase">
+                  Get Started
+                </span>
                 <div className="h-px w-24 bg-gradient-to-r from-white/40 to-transparent mt-3"></div>
               </div>
 

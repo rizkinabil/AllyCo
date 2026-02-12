@@ -77,7 +77,15 @@ export default function Framework() {
         {/* Background image */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 overflow-hidden">
-            <Image src={heroAbout} alt="AllyCo Transformation Framework" fill className="object-cover parallax-image" priority />
+            <Image
+              src={heroAbout}
+              alt="AllyCo Transformation Framework"
+              fill
+              className="object-cover parallax-image"
+              priority
+              quality={90}
+              sizes="100vw"
+            />
           </div>
           {/* Enhanced gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#0002ba]/80 via-[#0002ba]/60 to-[#0002ba]/40"></div>
