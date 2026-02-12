@@ -35,18 +35,19 @@ export default function Navigation() {
           : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex justify-between items-center ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo */}
           <div className="shrink-0">
             <Link href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity duration-300">
               <Image
                 src={scrolled ? '/logo-nobg.png' : '/invert-logo.png'}
                 alt="AllyCo"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 priority
-                className="object-contain"
+                quality={95}
+                className="object-contain sm:w-[60px] sm:h-[60px]"
               />
             </Link>
           </div>
@@ -74,7 +75,7 @@ export default function Navigation() {
               {/* CTA Button */}
               <Link
                 href="/contact"
-                className="ml-4 px-6 py-2.5 bg-[#0002ba] text-white text-sm font-medium hover:bg-[#000000] transition-all duration-300"
+                className="ml-4 px-5 sm:px-6 py-2 sm:py-2.5 bg-[#0002ba] text-white text-xs sm:text-sm font-medium hover:bg-[#000000] transition-all duration-300"
               >
                 Get Started
               </Link>
@@ -85,7 +86,9 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 text-[#31312d] hover:text-[#0002ba] focus:outline-none transition-colors duration-300"
+              className={`inline-flex items-center justify-center p-2 ${
+                isWhiteLabelNav && !scrolled ? 'text-white hover:text-white/80' : 'text-[#31312d] hover:text-[#0002ba]'
+              } focus:outline-none transition-colors duration-300`}
               aria-label="Toggle menu"
             >
               <svg
@@ -109,12 +112,12 @@ export default function Navigation() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden border-t border-[#0002ba]/5 bg-white">
-          <div className="px-6 py-6 space-y-2">
+          <div className="px-4 sm:px-6 py-4 sm:py-6 space-y-1 sm:space-y-2">
             {navItems.map((item, index) => (
               <Link
                 key={`nav-item-${item.name}-${index}`}
                 href={item.href}
-                className="block px-4 py-3 text-base font-medium text-[#31312d] hover:text-[#0002ba] hover:bg-[#f5f5f5]/50 transition-all duration-300"
+                className="block px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-[#31312d] hover:text-[#0002ba] hover:bg-[#f5f5f5]/50 transition-all duration-300 rounded-md"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
@@ -122,7 +125,7 @@ export default function Navigation() {
             ))}
             <Link
               href="/contact"
-              className="block px-4 py-3 mt-4 bg-[#0002ba] text-white text-base font-medium text-center hover:bg-[#000000] transition-all duration-300"
+              className="block px-3 sm:px-4 py-2.5 sm:py-3 mt-3 sm:mt-4 bg-[#0002ba] text-white text-sm sm:text-base font-medium text-center hover:bg-[#000000] transition-all duration-300 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Get Started

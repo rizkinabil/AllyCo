@@ -28,11 +28,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased -mt-15 overflow-x-hidden`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased -mt-24 overflow-x-hidden`}>
         <Navigation />
         {children}
       </body>
